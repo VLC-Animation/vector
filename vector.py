@@ -1,13 +1,14 @@
 from manim import *
 
 VTEX = TexTemplateLibrary.ctex
-TIME_DELAY = 1
+TIME_DELAY = 0
 
 class Chieu(Scene):
     def construct(self):
         #Slide 48
         text_1 = Tex('Chiều', tex_template=VTEX).shift(UP*3)
         self.play(Write(text_1))
+        self.wait(TIME_DELAY)
 
         #Slide 49
         text_2 = Tex('Điểm đầu bên trái', tex_template=VTEX).shift(DOWN*3)
@@ -16,7 +17,7 @@ class Chieu(Scene):
         circle_3 = circle_1.copy().shift(DOWN*0.3)
         circle_1.shift(UP*0.3)
         
-        self.play(Write(circle_1), Write(circle_2), Write(circle_3), Write(text_2))
+        self.play(Write(circle_1), Write(circle_2), Write(circle_3), Write(text_2, shift=DOWN))
         self.wait(TIME_DELAY)
 
         #Slide 50
@@ -38,7 +39,7 @@ class Chieu(Scene):
         #Slide 51
         text_3 = Tex('Vector có chiều từ trái sang phải', tex_template=VTEX).shift(DOWN*3)
         self.play(ReplacementTransform(text_2_2, text_3))
-        self.remove(circle_group_1, circle_group_2)
+        self.play(FadeOut(circle_group_1, circle_group_2))
         self.wait(TIME_DELAY)
 
         #Slide 52
