@@ -17,7 +17,7 @@ class Chieu(Scene):
         circle_3 = circle_1.copy().shift(DOWN*0.3)
         circle_1.shift(UP*0.3)
         
-        self.play(Write(circle_1), Write(circle_2), Write(circle_3), Write(text_2, shift=DOWN))
+        self.play(Write(circle_1), Write(circle_2), Write(circle_3), Write(text_2))
         self.wait(TIME_DELAY)
 
         #Slide 50
